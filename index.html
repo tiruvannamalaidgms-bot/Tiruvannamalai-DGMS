@@ -4,84 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiruvannamalai District Government Model School - Portal</title>
+    
+    <!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" href="banner.png.jpeg" type="image/x-icon">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS for Scrolling News Ticker -->
+    <style>
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .marquee-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-container:hover .marquee-text {
+            animation-play-state: paused; /* Pauses scrolling when mouse hovers over it */
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
-    <!-- Header -->
+    <!-- Header with Logo -->
     <header class="bg-blue-900 text-white py-6 shadow-md">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h1 class="text-2xl md:text-3xl font-bold">Tiruvannamalai District Government Model School</h1>
-            <p class="mt-2 text-blue-200">Official Student Academic Portal</p>
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+            <!-- Header Logo (Using banner image temporarily for the logo) -->
+            <img src="banner.png.jpeg" alt="Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white shadow-sm">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold">Tiruvannamalai District Government Model School</h1>
+                <p class="mt-1 text-blue-200 font-medium tracking-wide">Official Student Academic Portal</p>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 py-8">
         
-        <!-- Custom Banner Image (Set to your uploaded banner.png) -->
+        <!-- Custom Banner Image -->
         <div class="mb-8">
-           <img src="banner.png.jpeg" alt="School Banner" class="w-full h-auto rounded-lg shadow-sm border border-gray-200">
+            <img src="banner.png.jpeg" alt="School Banner" class="w-full h-auto rounded-lg shadow-sm border border-gray-200">
         </div>
 
-        <!-- Announcements Section -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
-            <h2 class="text-xl font-bold text-red-600 mb-2">📢 Latest Announcements</h2>
-            <ul class="list-disc pl-5 text-gray-600 space-y-1">
-                <li>No new announcements at this time.</li>
-            </ul>
+        <!-- Scrolling Announcements Ticker -->
+        <div class="bg-red-50 rounded-lg shadow-sm border border-red-200 mb-8 flex overflow-hidden">
+            <!-- Static Badge -->
+            <div class="bg-red-600 text-white font-bold px-4 py-3 flex-shrink-0 flex items-center shadow-md z-10">
+                <i class="fa-solid fa-bullhorn mr-2"></i> Updates
+            </div>
+            <!-- Moving Text -->
+            <div class="marquee-container text-red-800">
+                <div class="marquee-text font-medium text-sm md:text-base tracking-wide">
+                    <!-- ADD YOUR ANNOUNCEMENTS HERE: Copy and paste the <span> line below to add more -->
+                    <span class="mx-6">• Welcome to the new official student portal for DGMS!</span>
+                    <span class="mx-6">• Worksheets for the current week have been successfully uploaded to the Drive.</span>
+                    <span class="mx-6">• CUET Centre students must complete their practice papers by Friday.</span>
+                </div>
+            </div>
         </div>
 
         <!-- Resource Cards (4 Columns) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             
             <!-- Worksheets Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center hover:shadow-lg transition flex flex-col h-full">
-                <div class="text-4xl mb-4">✍️</div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+                <div class="text-4xl mb-4 text-blue-600"><i class="fa-solid fa-file-pen"></i></div>
                 <h3 class="text-lg font-bold mb-2">Worksheets</h3>
                 <p class="text-gray-500 mb-4 text-sm flex-grow">Download daily and weekly practice worksheets.</p>
                 
                 <div class="space-y-2 mt-4">
-                    <!-- Replace # with your DGMS Google Drive Link -->
-                    <a href="https://drive.google.com/drive/folders/11-EAbOk8cuh1HOLHfPjiHXek9sjgGZcq" target="_blank" class="block bg-blue-600 text-white px-4 py-2 rounded font-medium hover:bg-blue-700 transition w-full">DGMS Folder</a>
-                    
-                    <!-- CUET Centre Google Drive Link Included -->
-                    <a href="https://drive.google.com/drive/folders/15tpcOcTjaAwnXQ-A6foUsVydxFpHXF56" target="_blank" class="block bg-indigo-600 text-white px-4 py-2 rounded font-medium hover:bg-indigo-700 transition w-full">CUET Centre Folder</a>
+                    <a href="https://drive.google.com/drive/folders/11-EAbOk8cuh1HOLHfPjiHXek9sjgGZcq" target="_blank" class="block bg-blue-600 text-white px-4 py-2 rounded font-medium hover:bg-blue-700 transition w-full shadow-sm">DGMS Folder</a>
+                    <a href="https://drive.google.com/drive/folders/15tpcOcTjaAwnXQ-A6foUsVydxFpHXF56" target="_blank" class="block bg-indigo-600 text-white px-4 py-2 rounded font-medium hover:bg-indigo-700 transition w-full shadow-sm">CUET Centre Folder</a>
                 </div>
             </div>
 
             <!-- Question Paper & Answer Key Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-600 text-center hover:shadow-lg transition flex flex-col h-full">
-                <div class="text-4xl mb-4">📝</div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-600 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+                <div class="text-4xl mb-4 text-green-600"><i class="fa-solid fa-file-lines"></i></div>
                 <h3 class="text-lg font-bold mb-2">Papers & Keys</h3>
                 <p class="text-gray-500 mb-4 text-sm flex-grow">Access previous question papers and official keys.</p>
                 
                 <div class="space-y-2 mt-4">
-    <!-- DGMS Google Drive Link -->
-    <a href="https://drive.google.com/drive/folders/1C8UNaDboMdd5dDvLgvXJz1ubLWhIsTYc" target="_blank" class="block bg-green-600 text-white px-4 py-2 rounded font-medium hover:bg-green-700 transition w-full">DGMS Folder</a>
-    
-    <!-- CUET Centre Google Drive Link -->
-    <a href="https://drive.google.com/drive/folders/14hljeWwHi7lBy4UHpz_n23vFOWit8Dz1" target="_blank" class="block bg-emerald-600 text-white px-4 py-2 rounded font-medium hover:bg-emerald-700 transition w-full">CUET Centre Folder</a>
-</div>
+                    <!-- DGMS Papers link -->
+                    <a href="https://drive.google.com/drive/folders/1C8UNaDboMdd5dDvLgvXJz1ubLWhIsTYc" target="_blank" class="block bg-green-600 text-white px-4 py-2 rounded font-medium hover:bg-green-700 transition w-full shadow-sm">DGMS Folder</a>
+                    <!-- New CUET Papers link -->
+                    <a href="https://drive.google.com/drive/folders/14hljeWwHi7lBy4UHpz_n23vFOWit8Dz1" target="_blank" class="block bg-emerald-600 text-white px-4 py-2 rounded font-medium hover:bg-emerald-700 transition w-full shadow-sm">CUET Centre Folder</a>
+                </div>
             </div>
 
             <!-- Result Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-orange-500 text-center hover:shadow-lg transition flex flex-col h-full">
-                <div class="text-4xl mb-4">📊</div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-orange-500 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+                <div class="text-4xl mb-4 text-orange-500"><i class="fa-solid fa-chart-column"></i></div>
                 <h3 class="text-lg font-bold mb-2">Results</h3>
                 <p class="text-gray-500 mb-4 text-sm flex-grow">Check the latest test scores and performance reports.</p>
-                <!-- Replace # with your Google Drive Link -->
-                <a href="#" target="_blank" class="block bg-orange-500 text-white px-4 py-2 rounded font-medium hover:bg-orange-600 transition w-full mt-auto">View Results</a>
+                <!-- New Result Link -->
+                <a href="https://drive.google.com/drive/folders/1BlR_PclWvf4mQvnwQQAL7ubhRCCTTLYC" target="_blank" class="block bg-orange-500 text-white px-4 py-2 rounded font-medium hover:bg-orange-600 transition w-full mt-auto shadow-sm">View Results</a>
             </div>
 
             <!-- Syllabus Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-600 text-center hover:shadow-lg transition flex flex-col h-full">
-                <div class="text-4xl mb-4">📚</div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-600 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+                <div class="text-4xl mb-4 text-purple-600"><i class="fa-solid fa-book-open-reader"></i></div>
                 <h3 class="text-lg font-bold mb-2">Syllabus</h3>
                 <p class="text-gray-500 mb-4 text-sm flex-grow">View current syllabus and upcoming test portions.</p>
-                <!-- Replace # with your Google Drive Link -->
-                <a href="#" target="_blank" class="block bg-purple-600 text-white px-4 py-2 rounded font-medium hover:bg-purple-700 transition w-full mt-auto">View Syllabus</a>
+                <!-- New Syllabus Link -->
+                <a href="https://drive.google.com/drive/folders/16CG-EUGciFq6oDA-ZJfyd5alsj1Di85t" target="_blank" class="block bg-purple-600 text-white px-4 py-2 rounded font-medium hover:bg-purple-700 transition w-full mt-auto shadow-sm">View Syllabus</a>
             </div>
 
         </div>
