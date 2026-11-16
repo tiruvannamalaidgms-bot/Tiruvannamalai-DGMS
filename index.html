@@ -18,11 +18,21 @@
     <!-- Favicon (Browser Tab Icon) -->
     <link rel="icon" href="banner.png.jpeg" type="image/x-icon">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- FontAwesome & Custom Premium Font (Poppins) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- CSS for Scrolling News Ticker -->
+    <!-- CSS for Scrolling News Ticker & Premium Styles -->
     <style>
+        body { font-family: 'Poppins', sans-serif; }
+        
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -42,34 +52,44 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
+
+        /* Glassmorphism for the Student Request Banner */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
 
-    <!-- Header with Logo -->
-    <header class="bg-blue-900 text-white py-6 shadow-md">
+<!-- Premium Ice Blue Background -->
+<body class="bg-sky-50 text-gray-800">
+
+    <!-- Premium Sticky Header -->
+    <header class="bg-blue-900 text-white py-5 shadow-lg sticky top-0 z-50 transition-all">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
             <!-- Header Logo -->
-            <img src="banner.png.jpeg" alt="Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white shadow-sm">
+            <img src="banner.png.jpeg" alt="Logo" class="w-14 h-14 object-cover rounded-full border-2 border-blue-200 shadow-md">
             <div>
-                <h1 class="text-2xl md:text-3xl font-bold">Tiruvannamalai District Government Model School</h1>
-                <p class="mt-1 text-blue-200 font-medium tracking-wide">Official Academic Portal</p>
+                <h1 class="text-xl md:text-2xl font-bold tracking-tight">Tiruvannamalai District Government Model School</h1>
+                <p class="mt-0.5 text-blue-200 font-medium text-sm tracking-wide">Official Academic Portal</p>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-8">
+    <main class="max-w-6xl mx-auto px-4 py-10">
         
-        <!-- Custom Banner Image (Made smaller and centered) -->
-        <div class="mb-8 max-w-4xl mx-auto">
-            <img src="banner.png.jpeg" alt="Tiruvannamalai DGMS Banner" class="w-full h-auto rounded-lg shadow-md border border-gray-200">
+        <!-- Custom Banner Image -->
+        <div class="mb-8 max-w-4xl mx-auto" data-aos="fade-in" data-aos-duration="1000">
+            <img src="banner.png.jpeg" alt="Tiruvannamalai DGMS Banner" class="w-full h-auto rounded-xl shadow-lg border border-white/50">
         </div>
 
         <!-- Scrolling Announcements Ticker -->
-        <div class="bg-red-50 rounded-lg shadow-sm border border-red-200 mb-8 flex overflow-hidden">
-            <div class="bg-red-600 text-white font-bold px-4 py-3 flex-shrink-0 flex items-center shadow-md z-10">
-                <i class="fa-solid fa-bullhorn mr-2"></i> Updates
+        <div class="bg-red-50 rounded-xl shadow-sm border border-red-200 mb-10 flex overflow-hidden" data-aos="fade-up">
+            <div class="bg-red-600 text-white font-bold px-5 py-3 flex-shrink-0 flex items-center shadow-md z-10 text-sm tracking-wide">
+                <i class="fa-solid fa-bullhorn mr-2 text-lg animate-pulse"></i> Updates
             </div>
             <div class="marquee-container text-red-800">
                 <div class="marquee-text font-medium text-sm md:text-base tracking-wide">
@@ -81,101 +101,83 @@
             </div>
         </div>
 
-        <!-- Resource Cards -->
+        <!-- Resource Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             
             <!-- Worksheets Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl border-t-4 border-blue-600 text-center flex flex-col h-full hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
                 <div class="text-4xl mb-4 text-blue-600"><i class="fa-solid fa-file-pen"></i></div>
-                <h3 class="text-lg font-bold mb-2">Worksheets</h3>
-                <p class="text-gray-500 mb-4 text-sm flex-grow">Download daily and weekly practice worksheets.</p>
+                <h3 class="text-lg font-bold mb-2 text-gray-900">Worksheets</h3>
+                <p class="text-gray-500 mb-6 text-sm flex-grow">Download daily and weekly practice worksheets.</p>
                 
-                <div class="space-y-2 mt-4">
-                    <a href="https://drive.google.com/drive/folders/11-EAbOk8cuh1HOLHfPjiHXek9sjgGZcq" target="_blank" class="block bg-blue-600 text-white px-4 py-2 rounded font-medium hover:bg-blue-700 transition w-full shadow-sm">DGMS Folder</a>
-                    <a href="https://drive.google.com/drive/folders/15tpcOcTjaAwnXQ-A6foUsVydxFpHXF56" target="_blank" class="block bg-indigo-600 text-white px-4 py-2 rounded font-medium hover:bg-indigo-700 transition w-full shadow-sm">CUET Centre Folder</a>
+                <div class="space-y-3 mt-auto">
+                    <a href="https://drive.google.com/drive/folders/11-EAbOk8cuh1HOLHfPjiHXek9sjgGZcq" target="_blank" class="block bg-blue-600/10 text-blue-700 border border-blue-200 px-4 py-2.5 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition w-full shadow-sm text-sm">DGMS Folder</a>
+                    <a href="https://drive.google.com/drive/folders/15tpcOcTjaAwnXQ-A6foUsVydxFpHXF56" target="_blank" class="block bg-indigo-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-indigo-700 transition w-full shadow-sm text-sm">CUET Centre</a>
                 </div>
             </div>
 
             <!-- Question Paper & Answer Key Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-600 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl border-t-4 border-green-600 text-center flex flex-col h-full hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
                 <div class="text-4xl mb-4 text-green-600"><i class="fa-solid fa-file-lines"></i></div>
-                <h3 class="text-lg font-bold mb-2">Papers & Keys</h3>
-                <p class="text-gray-500 mb-4 text-sm flex-grow">Access previous question papers and official keys.</p>
+                <h3 class="text-lg font-bold mb-2 text-gray-900">Papers & Keys</h3>
+                <p class="text-gray-500 mb-6 text-sm flex-grow">Access previous question papers and official keys.</p>
                 
-                <div class="space-y-2 mt-4">
-                    <a href="https://drive.google.com/drive/folders/1C8UNaDboMdd5dDvLgvXJz1ubLWhIsTYc" target="_blank" class="block bg-green-600 text-white px-4 py-2 rounded font-medium hover:bg-green-700 transition w-full shadow-sm">DGMS Folder</a>
-                    <a href="https://drive.google.com/drive/folders/14hljeWwHi7lBy4UHpz_n23vFOWit8Dz1" target="_blank" class="block bg-emerald-600 text-white px-4 py-2 rounded font-medium hover:bg-emerald-700 transition w-full shadow-sm">CUET Centre Folder</a>
+                <div class="space-y-3 mt-auto">
+                    <a href="https://drive.google.com/drive/folders/1C8UNaDboMdd5dDvLgvXJz1ubLWhIsTYc" target="_blank" class="block bg-green-600/10 text-green-700 border border-green-200 px-4 py-2.5 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition w-full shadow-sm text-sm">DGMS Folder</a>
+                    <a href="https://drive.google.com/drive/folders/14hljeWwHi7lBy4UHpz_n23vFOWit8Dz1" target="_blank" class="block bg-emerald-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-emerald-700 transition w-full shadow-sm text-sm">CUET Centre</a>
                 </div>
             </div>
 
             <!-- Result Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-orange-500 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl border-t-4 border-orange-500 text-center flex flex-col h-full hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
                 <div class="text-4xl mb-4 text-orange-500"><i class="fa-solid fa-chart-column"></i></div>
-                <h3 class="text-lg font-bold mb-2">Results</h3>
-                <p class="text-gray-500 mb-4 text-sm flex-grow">Check the latest test scores and performance reports.</p>
-                <a href="https://drive.google.com/drive/folders/1BlR_PclWvf4mQvnwQQAL7ubhRCCTTLYC" target="_blank" class="block bg-orange-500 text-white px-4 py-2 rounded font-medium hover:bg-orange-600 transition w-full mt-auto shadow-sm">View Results</a>
+                <h3 class="text-lg font-bold mb-2 text-gray-900">Results</h3>
+                <p class="text-gray-500 mb-6 text-sm flex-grow">Check the latest test scores and performance reports.</p>
+                <a href="https://drive.google.com/drive/folders/1BlR_PclWvf4mQvnwQQAL7ubhRCCTTLYC" target="_blank" class="block bg-orange-500 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-orange-600 transition w-full mt-auto shadow-sm text-sm">View Results</a>
             </div>
 
             <!-- Syllabus Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-600 text-center hover:shadow-lg transition flex flex-col h-full hover:-translate-y-1 duration-300">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl border-t-4 border-purple-600 text-center flex flex-col h-full hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
                 <div class="text-4xl mb-4 text-purple-600"><i class="fa-solid fa-book-open-reader"></i></div>
-                <h3 class="text-lg font-bold mb-2">Syllabus</h3>
-                <p class="text-gray-500 mb-4 text-sm flex-grow">View current syllabus and upcoming test portions.</p>
-                <a href="https://drive.google.com/drive/folders/16CG-EUGciFq6oDA-ZJfyd5alsj1Di85t" target="_blank" class="block bg-purple-600 text-white px-4 py-2 rounded font-medium hover:bg-purple-700 transition w-full mt-auto shadow-sm">View Syllabus</a>
+                <h3 class="text-lg font-bold mb-2 text-gray-900">Syllabus</h3>
+                <p class="text-gray-500 mb-6 text-sm flex-grow">View current syllabus and upcoming test portions.</p>
+                <a href="https://drive.google.com/drive/folders/16CG-EUGciFq6oDA-ZJfyd5alsj1Di85t" target="_blank" class="block bg-purple-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-purple-700 transition w-full mt-auto shadow-sm text-sm">View Syllabus</a>
             </div>
-<!-- Student Request Portal -->
-        <div class="mb-12 bg-white p-6 md:p-8 rounded-lg shadow-md border-t-4 border-blue-600 max-w-4xl mx-auto hover:shadow-lg transition duration-300">
-            <div class="text-center mb-6">
-                <h3 class="text-2xl font-bold text-gray-800">
-                    <i class="fa-solid fa-paper-plane text-blue-600 mr-2"></i>Student Request Portal
+        </div>
+
+        <!-- Sleek Student Comments Link (Glassmorphism & Google Sheets) -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl shadow-sm max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 transition hover:shadow-lg mb-4" data-aos="zoom-in">
+            
+            <!-- Left Side: Text -->
+            <div class="md:w-2/3 text-center md:text-left">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                    <i class="fa-solid fa-comments text-blue-600 mr-2"></i>Student Comments & Requests
                 </h3>
-                <p class="text-gray-500 mt-2 text-sm md:text-base">Need a specific OMR sheet review or worksheet? Send a direct message to the admin below.</p>
+                <p class="text-gray-600 text-sm leading-relaxed">Need a specific OMR sheet review, worksheet, or have feedback? Click the button below to add your comments directly to our official request sheet.</p>
             </div>
             
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                
-                <!-- REQUIRED: Paste your Web3Forms Access Key here -->
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Student Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="e.g. Rahul M.">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Class / Section</label>
-                        <input type="text" name="class" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="e.g. 11 A1">
-                    </div>
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Message or Request</label>
-                    <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-600 focus:border-blue-600 outline-none transition" placeholder="Describe your request..."></textarea>
-                </div>
-                
-                <!-- SPAM Protection -->
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition duration-300 shadow-sm mt-4">
-                    Send Request to Admin
-                </button>
-            </form>
+            <!-- Right Side: Google Sheets Button -->
+            <div class="md:w-1/3 flex justify-center md:justify-end w-full">
+                <a href="https://docs.google.com/spreadsheets/d/1jMXa2ngdKI9VYOfb-bFXQ1_JrQQSdYPZndkeoXrBmSw/edit?gid=0#gid=0" target="_blank" class="w-full md:w-auto text-center bg-blue-600 text-white font-bold py-3.5 px-6 rounded-xl hover:bg-blue-700 transition shadow-md flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-table border-r pr-3 border-blue-400"></i> Open Request Sheet
+                </a>
+            </div>
         </div>
-        </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white text-gray-700 border-t border-gray-200 pt-12 pb-6">
+    <!-- Professional Footer -->
+    <footer class="bg-white text-gray-700 border-t border-gray-200 pt-12 pb-6 mt-8">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 
                 <!-- Column 1: School Brand and Bio -->
                 <div>
-                    <div class="flex items-center space-x-2 mb-3">
-                        <div class="bg-blue-900 text-white h-8 w-8 rounded-full flex items-center justify-center font-bold text-sm">T</div>
-                        <span class="font-bold text-lg text-blue-900">Tiruvannamalai DGMS</span>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="bg-blue-900 text-white h-9 w-9 rounded-full flex items-center justify-center font-bold text-sm shadow-sm">T</div>
+                        <span class="font-bold text-lg text-blue-900 tracking-tight">Tiruvannamalai DGMS</span>
                     </div>
-                    <p class="text-xs text-gray-500 mb-1">District Government Model School</p>
+                    <p class="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">District Government Model School</p>
                     <p class="text-sm text-gray-600 leading-relaxed mt-2">
                         Fostering academic excellence through seamless digital access. Your central hub for essential study materials, test preparation, and success.
                     </p>
@@ -183,44 +185,51 @@
 
                 <!-- Column 2: Academic Portal Navigation Links -->
                 <div>
-                    <h4 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-4">Academic Portal</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-blue-600 transition"><i class="fa-solid fa-graduation-cap mr-2 text-xs"></i>Exams Dashboard</a></li>
-                        <li><a href="#" class="hover:text-blue-600 transition"><i class="fa-solid fa-file-pen mr-2 text-xs"></i>Worksheets</a></li>
-                        <li><a href="#" class="hover:text-blue-600 transition"><i class="fa-solid fa-book mr-2 text-xs"></i>Student Resources</a></li>
-                        <li><a href="#" class="hover:text-blue-600 transition"><i class="fa-solid fa-laptop mr-2 text-xs"></i>Online Classes</a></li>
-                        <li><a href="#" class="hover:text-blue-600 transition"><i class="fa-solid fa-bullhorn mr-2 text-xs"></i>Notice Board</a></li>
+                    <h4 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-5">Academic Portal</h4>
+                    <ul class="space-y-3 text-sm text-gray-600 font-medium">
+                        <li><a href="#" class="hover:text-blue-600 transition flex items-center"><i class="fa-solid fa-graduation-cap w-5 text-gray-400"></i>Exams Dashboard</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition flex items-center"><i class="fa-solid fa-file-pen w-5 text-gray-400"></i>Worksheets</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition flex items-center"><i class="fa-solid fa-book w-5 text-gray-400"></i>Student Resources</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition flex items-center"><i class="fa-solid fa-laptop w-5 text-gray-400"></i>Online Classes</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition flex items-center"><i class="fa-solid fa-bullhorn w-5 text-gray-400"></i>Notice Board</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contacts -->
                 <div>
-                    <h4 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-4">Contact</h4>
-                    <ul class="space-y-3 text-sm text-gray-600">
+                    <h4 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-5">Contact</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
                         <li class="flex items-start">
-                            <span class="text-blue-900 mt-0.5 mr-2"><i class="fa-solid fa-location-dot"></i></span>
-                            <span>Tiruvannamalai District, Tamil Nadu.</span>
+                            <span class="text-blue-600 mt-0.5 w-6"><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="font-medium">Tiruvannamalai District, Tamil Nadu.</span>
                         </li>
                         <li class="flex items-center">
-                            <span class="text-blue-900 mr-2"><i class="fa-solid fa-envelope"></i></span>
-                            <a href="mailto:support@tiruvannamalaidgms.com" class="hover:text-blue-600 transition">support@tiruvannamalaidgms.com</a>
+                            <span class="text-blue-600 w-6"><i class="fa-solid fa-envelope"></i></span>
+                            <a href="mailto:support@tiruvannamalaidgms.com" class="hover:text-blue-600 transition font-medium">support@tiruvannamalaidgms.com</a>
                         </li>
                         <li class="flex items-center">
-                            <span class="text-blue-900 mr-2"><i class="fa-solid fa-phone"></i></span>
-                            <span>+91 12345 67890</span>
+                            <span class="text-blue-600 w-6"><i class="fa-solid fa-phone"></i></span>
+                            <span class="font-medium">+91 12345 67890</span>
                         </li>
                     </ul>
                 </div>
-
             </div>
 
             <!-- Bottom Copyright bar -->
-            <div class="border-t border-gray-100 pt-6 text-center md:text-left md:flex md:justify-between text-xs text-gray-500">
+            <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-medium">
                 <p>&copy; 2026 Tiruvannamalai District Government Model School. All rights reserved.</p>
-                <p class="mt-2 md:mt-0">Academic Hub</p>
+                <p class="mt-2 md:mt-0 bg-gray-100 px-3 py-1 rounded-full">Maintained by ATS Rusitharan</p>
             </div>
         </div>
     </footer>
 
+    <!-- Initialize AOS Animation Script -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 </html>
